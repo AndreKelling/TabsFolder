@@ -38,7 +38,7 @@ header
   width:100%;
 }
 
-.group_actif
+.active_group
 {
   background-color:#E9E9E9;
 }
@@ -68,7 +68,7 @@ header
 }
 
 
-.list_onglet
+.list_tab
 {
   max-height:400px;
   overflow:auto;
@@ -77,19 +77,19 @@ header
   padding:7px;
 }
 
-.list_onglet li
+.list_tab li
 {
   clear:right;
   padding-left:15px;
   margin-bottom:1px;
 }
 
-.list_onglet li img
+.list_tab li img
 {
   vertical-align:middle;
 }
 
-.list_onglet li:hover
+.list_tab li:hover
 {
   background-color:#929292;
 }

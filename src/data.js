@@ -1,12 +1,12 @@
-var classOnglet = function() {
+var classTab = function() {
   this.id;
   this.id_chrome;
   this.url;
   this.pinned;
   this.title;
-  this.icone;
+  this.icon;
   this.miniature;
-  this.groupe_onglet;
+  this.groupId;
 };
 
 var classGroupe = function() {

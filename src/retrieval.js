@@ -1,21 +1,21 @@
 /**
- * Fonctions de recherche 
+ * Search functions (?) 
  */
 
 function getNewId() 
 {
-  var valide = false;
+  var valid = false;
   var id = 0;
-  while(!valide)
+  while(!valid)
   {
-    valide = true;
+    valid = true;
     
     for (var i = 0 ; i < list_groups.length ; ++i)
     {
-      // On verifie si l'id n'existe pas
+      // We check that the id doesn't exist already
       if(list_groups[i].id == id)
       {
-	valide = false;
+		valid = false;
       }
     }
     
@@ -25,19 +25,19 @@ function getNewId()
 }
 
 
-var id_compteur = 0;
+var id_counter = 0;
 
 function getNewIdTab()
 {
-  id_compteur++;
-  return id_compteur;
+  id_counter++;
+  return id_counter;
 }
 
 function getGroupId(element) 
 {
   var id_nom = "-1";
   
-  // On verifie d'abord que l'element n'est pas deja un groupe
+  // We first verify that the element is not already a group
   if(element.hasClass("group_id"))
   {
     id_nom = element.attr("id");
@@ -59,7 +59,7 @@ function getGroup(id)
       return list_groups[i];
     }
   }
-  console.error("Groupe non trouve : " + id.toString());
+  console.error("Group not found : " + id.toString());
 } 
 
 function getGroupByTab(tab_id)
@@ -76,5 +76,5 @@ function getGroupByTab(tab_id)
       }
     }
   }
-  console.error("Aucun groupe ne contient : " + tab_id.toString());
+  console.error("No group contains : " + tab_id.toString());
 }
