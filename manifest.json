@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
 
-  "name" :"TabsFolder",
+  "name" :"TabsFolder-dronkitExperimental",
   "version" :"1.0.0",
   "description" :"Group your tabs into groups.",
   "icons": { "16":  "icon16.png",
@@ -12,7 +12,7 @@
       "name": "Conchilicultor",
       "email": "conchilicultor@gmail.com" },
       
-  "permissions": ["tabs", "storage"],
+  "permissions": ["tabs", "storage", "bookmarks"],
 
   "background": {
     "scripts": ["src/event_page.js"],

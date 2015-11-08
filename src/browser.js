@@ -1,10 +1,10 @@
 function createTab(tab, onFirstLaunch)
 {
-  if(!onFirstLaunch)// On ne reouvre pas les onglets deja ouverts
+  if(!onFirstLaunch)// We don't open the tabs that are already open
   {
-      chrome.tabs.create({url:tab.url, active:false, pinned:tab.pinned}, function(ongletCree) {
-      // Recuperation de l'id_chrome !!!!!
-      tab.id_chrome = ongletCree.id;
+      chrome.tabs.create({url:tab.url, active:false, pinned:tab.pinned}, function(createdTab) {
+      // Retrieve the id_chrome !!!!!
+      tab.id_chrome = createdTab.id;
     });
   }
 }
