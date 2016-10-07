@@ -38,13 +38,13 @@ function getGroupId(element)
   var id_nom = "-1";
   
   // We first verify that the element is not already a group
-  if(element.hasClass("group_id"))
+  if(element.hasClass("group"))
   {
     id_nom = element.attr("id");
   }
   else
   {
-    id_nom = element.closest(".group_id").attr("id");
+    id_nom = element.closest(".group").attr("id");
   }
   
   return parseInt(id_nom.replace("group_id_",""));
