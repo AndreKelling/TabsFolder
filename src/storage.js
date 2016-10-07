@@ -137,9 +137,9 @@ function loadGroup()
 
 function saveGroup()
 {
-	chrome.storage.sync.clear( //empty sync storage (for debug purposes, may be eliminated later)
-		function()
-		{
+	//chrome.storage.sync.clear( //empty sync storage (for debug purposes, may be eliminated later)
+		//function()
+		//{
 			var listSaveGroup = new Array();
 			for(var i=0 ; i < list_groups.length; ++i)
 			{
@@ -150,18 +150,12 @@ function saveGroup()
 				}
 			}
 			// Save active group name
-			chrome.storage.sync.set({"active_name":activeGroup.name},
-				function()
-				{
-					//callback function
-					console.log('savegroup callback')
-				}
-			);
+			chrome.storage.sync.set({"active_name":activeGroup.name});
 			
 			// Split the list to be saved into parts
 			var hugeStorage = new HugeStorageSync();
 			hugeStorage.set('lg', JSON.stringify(listSaveGroup)); //add a callback here to handle any storage errors
 			//chrome.storage.sync.set({"list_groups":storageSplit}); (??)
-		}
-	);	
+	//	}
+	//);
 }

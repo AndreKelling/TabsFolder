@@ -9,7 +9,7 @@ var classTab = function() {
   this.groupId;
 };
 
-var classGroupe = function() {
+var classGroup = function() {
   this.id;
   this.name;
   this.list_tabs = new Array();

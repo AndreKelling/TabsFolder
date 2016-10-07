@@ -5,25 +5,26 @@
 function createGroup()
 {
 	// Create a group
-	var new_group = new classGroupe();
+	var new_group = new classGroup();
 
 	new_group.id = getNewId();
 	new_group.name = "Group " + new_group.id.toString();
+	new_group.toggle_state = "hidden";
 
 	// Add the group
 	list_groups.push(new_group);
 
 	// Add group to the groups view
 	$("#list_groups").append(
-		'<div id="group_id_' + new_group.id.toString() + '" class="group_id" >' +
+		'<div id="group_id_' + new_group.id.toString() + '" class="group" >' +
 		'<p class="group_head">' +
 		'<input type="text" class="group_name" value="' + new_group.name + '" >' +
-		'&nbsp;('+new_group.list_tabs.length.toString()+')&nbsp'+
-		'<button type="button" class="group_remove" >Close the group</button>' +
 		'<button type="button" class="group_set_actif" >Work with this group</button>' +
+		'<button type="button" class="group_toggle" >Show Pages</button>' +
+		'<button type="button" class="group_remove" title="DELETE this group!">DELETE</button>' +
 		'<button type="button" class="group_move" draggable="true" >M</button>' +
 		'</p>' +
-		'<ul class="list_tab">' +
+		'<ul class="list_tab '+ new_group.toggle_state +'">' +
 		'</u>' +
 		'</div>'
 	);
@@ -173,4 +174,13 @@ function setActiveGroup(group)
 	{
 		createTab(activeGroup.list_tabs[i]);
 	}
+}
+
+function toggleGroup(group)
+{
+	activeGroup = group;
+
+	$("#group_id_" + activeGroup.id.toString() + ' .list_tab').toggleClass("hidden");
+
+	console.log("Toggled :" + activeGroup.name);
 }
