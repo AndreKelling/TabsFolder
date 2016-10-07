@@ -5,7 +5,7 @@
 function createGroup()
 {
 	// Create a group
-	var new_group = new classGroupe();
+	var new_group = new classGroup();
 
 	new_group.id = getNewId();
 	new_group.name = "Group " + new_group.id.toString();
